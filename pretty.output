@@ -2,20 +2,6 @@ Feature: Login # features/login.feature:1
 
   Scenario: Successful login                                                        # features/login.feature:3
     Given the user is on the login page                                             # features/steps/login_steps.py:4
-      Traceback (most recent call last):
-        File "/opt/anaconda3/lib/python3.13/site-packages/behave/model.py", line 1991, in run
-          match.run(runner.context)
-          ~~~~~~~~~^^^^^^^^^^^^^^^^
-        File "/opt/anaconda3/lib/python3.13/site-packages/behave/matchers.py", line 105, in run
-          self.func(context, *args, **kwargs)
-          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "features/steps/login_steps.py", line 6, in step_open_login
-          context.login_page = LoginPage(context.page, context.base_url)
-                                         ^^^^^^^^^^^^
-        File "/opt/anaconda3/lib/python3.13/site-packages/behave/runner.py", line 430, in __getattr__
-          raise AttributeError(msg)
-      AttributeError: 'Context' object has no attribute 'page'
-
-    When the user logs in with username "standard_user" and password "secret_sauce" # None
-    Then the dashboard should be visible                                            # None
+    When the user logs in with username "standard_user" and password "secret_sauce" # features/steps/login_steps.py:9
+    Then the dashboard should be visible                                            # features/steps/login_steps.py:13
 
